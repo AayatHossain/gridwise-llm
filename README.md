@@ -28,7 +28,7 @@ One HTTP service that reads a 24-hour campus energy scenario plus 1–3 natural-
 Requirements: Python 3.11+ (3.12 recommended), `pip`, an OpenAI API key.
 
 ```bash
-git clone <repository-url> gridwise-llm
+git clone https://github.com/AayatHossain/gridwise-llm.git gridwise-llm
 cd gridwise-llm
 
 python -m venv .venv
@@ -101,8 +101,8 @@ All configuration is read from environment variables. Copy `.env.example` to `.e
 The image contains no credentials; the API key is injected at run time.
 
 ```bash
-docker pull ghcr.io/<owner>/<repo>:latest
-docker run --rm -p 8000:8000 -e OPENAI_API_KEY=sk-... ghcr.io/<owner>/<repo>:latest
+docker pull ghcr.io/aayathossain/gridwise-llm:latest
+docker run --rm -p 8000:8000 -e OPENAI_API_KEY=sk-... ghcr.io/aayathossain/gridwise-llm:latest
 
 curl -s http://localhost:8000/health        # {"status":"ok"}
 python scripts/run_public_samples.py --base-url http://localhost:8000
