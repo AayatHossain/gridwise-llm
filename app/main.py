@@ -28,7 +28,13 @@ settings = load_settings()
 logging.basicConfig(level=settings.log_level, format="%(asctime)s %(levelname)s %(name)s: %(message)s")
 log = logging.getLogger("gridwise.api")
 
-app = FastAPI(title="GridWise LLM Energy Optimizer", version="1.0.0", docs_url=None, redoc_url=None)
+app = FastAPI(
+    title="GridWise LLM Energy Optimizer",
+    version="1.0.0",
+    description="Interactive testing page. The judged endpoints are GET /health and POST /optimize-energy.",
+    docs_url="/docs",
+    redoc_url=None,
+)
 interpreter = NoteInterpreter(settings)
 
 if settings.llm_enabled:
